@@ -193,17 +193,12 @@ member_ninety <- final %>%
   group_by(idrett2) %>%
   summarise(n = n())
 
-library(dplyr)
-library(lubridate)
-library(readxl)
-
-
-
-
 
 library(dplyr)
 library(lubridate)
 library(readxl)
+
+#RETRIEVE SEASONS FROM THE FOLLOWING FILE: "https://github.com/MethiF/2025_The_Norwegian_Sports_Membership_Database/blob/main/sesonger.xlsx"#
 
 sport_seasons <- read_excel("C:/Users/frme/OneDrive - Folkehelseinstituttet/Dokumenter/PhD/Cohort Profile/sesonger.xlsx")
 
@@ -383,7 +378,7 @@ mean(correlation_df$license_membership_overlap[correlation_df$member_one_year ==
 mean(correlation_df$member_one_year[correlation_df$license_membership_overlap == 1], na.rm = TRUE)
 
 ##########################################
-##S-Table X: Characteristics of members##
+##S-Table 2: Characteristics of members##
 #########################################
 
 fodeland <- df_persons %>%

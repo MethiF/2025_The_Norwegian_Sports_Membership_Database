@@ -47,6 +47,8 @@ gc()
 
 collapsed_df$year <- as.factor(collapsed_df$year)
 
+#RETRIEVE SHARES FROM THE FOLLOWING FILE: https://github.com/MethiF/2025_The_Norwegian_Sports_Membership_Database/blob/main/coverage_share.xlsx#
+
 library(readxl)
 share_sports <- read_excel("C:/Users/frme/OneDrive - Folkehelseinstituttet/Dokumenter/PhD/Cohort Profile/coverage_share.xlsx")
 
@@ -161,6 +163,8 @@ pers_fylke$year <- as.factor(pers_fylke$year)
 
 
 library(readxl)
+#RETRIEVE COUNTIES (FYLKE) FROM THE FOLLOWING FILE: https://github.com/MethiF/2025_The_Norwegian_Sports_Membership_Database/blob/main/Fylker.xlsx
+
 fylke_name <- read_excel("C:/Users/frme/OneDrive - Folkehelseinstituttet/Dokumenter/PhD/Fylker.xlsx")
 
 fylke_pre_2020 <- fylke_name %>%
@@ -312,7 +316,6 @@ county_graph
 ##############
 
 
-#Income (should be done better, just a test!)#
 income <- df_income %>%
   filter(aargang >= 2014 & aargang <= 2023)
 
