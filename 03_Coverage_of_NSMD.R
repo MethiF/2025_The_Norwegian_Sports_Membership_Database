@@ -1,11 +1,15 @@
-# Figure 2a, 2b, S-Figure 1: Coverage of NSMD by year #
+#ESTIMATING THE COVERAGE OF NSMD#
+#SCRIPTS FOR FIGURES 2A, 2B and S-FIGURE 1#
 
 library(readxl)
+
+#DOWNLOAD THIS FILE FROM GITHUB: https://github.com/MethiF/2025_The_Norwegian_Sports_Membership_Database/blob/main/NSMD_NIF_members.xlsx#
+#THIS FILE CONTAINS ACTUAL NUMBERS OF PARTICIPANTS FROM NSMD AND NIF REPORTS#
 share_sports <- read_excel("C:/Users/frme/OneDrive - Folkehelseinstituttet/Dokumenter/PhD/Cohort Profile/NSMD_NIF_members.xlsx")
 
+#REMOVE SPORTS WITH LOW COVERAGE#
 remove <- c("Company sport", "Curling", "Golf", "Student sports", "Squash", "Multisport", "Swimming")
 
-#Medlemmer totalt alle idretter#
 alle <- share_sports %>%
   filter(!idrett2 %in% remove)
 
@@ -25,7 +29,7 @@ collapsed_df2 <- collapsed_df2 %>%
     percentage_label = paste0(round(pct, 1), "%")
   )
 
-#Figure 2a: Coverage of NSMD by year.
+#FIGURE 2A: Coverage of NSMD by year.
 
 ggplot(collapsed_df2, aes(x = year, y = share, group = 1)) +
   geom_area(alpha = 0.3, show.legend = FALSE, fill = "#099eee") +
@@ -54,7 +58,7 @@ ggplot(collapsed_df2, aes(x = year, y = share, group = 1)) +
 
 
 
-#Figure 2b: Coverage of top 10 sports in NSMD by year.
+#FIGURE 2B: Coverage of top 10 sports in NSMD by year.
 
 top_10 <- c("Football", "Handball", "Skiing", "Athletics", "Gymnastics", "Martial arts", "Swimming", "Volleyball", "Basketball", "Bandy")
 
@@ -116,7 +120,7 @@ ggplot(top_10_data, aes(x = year, y = share, group = idrett2, fill = cat), color
 
 
 
-#S-Figure 1: Coverage by type of sport
+#S-FIGURE 1: Coverage by type of sport
 
 collapsed_df4 <- share_sports %>%
   group_by(year, idrett2) %>%
@@ -173,4 +177,3 @@ ggplot(collapsed_df4, aes(x = year, y = share, group = idrett2, fill = cat), col
     plot.subtitle = element_text(size = 14, hjust = 0.5),
     plot.caption = element_text(size = 10, hjust = 0)
   )
-
