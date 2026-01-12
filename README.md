@@ -5,8 +5,8 @@ This repisotry contains R-scripts for the paper "The Norwegian Sports Membership
 The original idea was to include a simulated dataset showing the structure of the data. However, this job was more time consuming than initially imagined. This might be uploaded later.
 
 The current files contain:
-00_Population: This file creates the population - both for all memberships and active memberships.
-01_Table1_Descriptives: This file creates both Table 1 and S-Table 2.
-02_Figure1_Ages: This file creates Figure 1.
-03_Figure2_Coverage: This file creates both panels in Figure 2.
-04_Supplementary_Information: This file creates all the supplementary figures.
+-- 00_Population: This file creates the population - both for all memberships and active memberships.
+- 01_Table1_Descriptives: This file creates both Table 1 and S-Table 2.
+--- 02_Figure1_Ages: This file creates Figure 1.
+-- 03_Figure2_Coverage: This file creates both panels in Figure 2.
+- 04_Supplementary_Information: This file creates all the supplementary figures.
